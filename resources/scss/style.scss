@@ -1,0 +1,45 @@
+
+@use 'custom';
+
+// IMPORT THE COMPONENTS
+@use 'components/card';
+@use 'components/navbar';
+@use 'components/footer';
+@use 'components/blog-list';
+
+
+// IMPORT THE SECTIONS
+@use 'pages/home/sections/trending';
+
+body{
+    font-family: 'Varela Round', sans-serif;
+}
+.h-auto{
+    height: auto;
+}
+.h-300{
+    height: 300px;
+}
+.h-500{
+    height: 500px;
+}
+
+
+.bg-blur{
+    backdrop-filter: blur(12px);
+}
+
+
+.divider{
+    width: 100%;
+    height: 0.5px;
+    background-color: rgba(101, 92, 92, 0.5);
+}
+
+.border-box-start{
+    border-radius: 10px 0 0 10px;
+}
+
+.border-box-end{
+    border-radius: 0px 10px 10px 0;
+}

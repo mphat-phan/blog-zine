@@ -1,0 +1,13 @@
+@use '../custom' as *;
+
+.footer{
+    &-blog-title {
+        font-size: 16px!important;
+        font-weight: 800;
+    }
+    &-blog-date {
+        font-size: 12px!important;
+        font-weight: 800;
+    }
+    background-color: $dark-custom;
+}

@@ -1,0 +1,23 @@
+//COLOR
+$primary: #2163e8;
+$dark-custom: #0f0f10;
+$bg-dark-tertiary: #191a1f;
+// NAVBAR
+
+// CONTAINER
+
+// CARD
+$card-border-radius: 10px;
+
+// BOOTSTRAP
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+.navbar-toggler{
+    border: none;
+}
+.bg-dark-tertiary{
+    background: $bg-dark-tertiary;
+}
+
+
+

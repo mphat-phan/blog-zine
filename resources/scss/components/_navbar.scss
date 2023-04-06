@@ -1,0 +1,19 @@
+@use '../custom' as *;
+
+.navbar {
+    &-btn-search{
+        position: relative;
+    }
+    &-btn-subcribe{
+        @include media-breakpoint-down(sm) {
+            display: none;
+        }
+    }
+}
+
+
+.dropdownBox{
+    position: absolute;
+    top: calc(0rem + 3rem);
+    right: 0;
+}

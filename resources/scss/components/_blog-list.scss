@@ -1,0 +1,48 @@
+.nav-divider{
+    height: fit-content;
+    li{
+        display: inline-block;
+        padding-right: 0.5rem;
+    }
+    li:nth-child(2){
+        display: inline-flex;
+        align-items: center;
+        height: 24px;
+        &::before{
+            content: "";
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            margin: 0 0.5rem;
+            background-color: white;
+            line-height: 25px;
+            border-radius: 100%;
+
+        }
+    }
+}
+
+.card-blogs{
+
+}
+
+.card-blog{
+    .avatar{
+        img{
+            width: 30px;
+        }
+    }
+    .card-img{
+        position: relative;
+    }
+    &-badge{
+        position: absolute;
+        bottom: calc(0rem + 1rem);
+        left: calc(0rem + 1rem);
+        &__top{
+            position: absolute;
+            top: calc(0rem);
+            left: calc(0rem);
+        }
+    }
+}
