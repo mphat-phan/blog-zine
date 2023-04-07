@@ -29,3 +29,23 @@ Route::get('/sign-up',[UserController::class, 'signUp']);
 Route::post('/sign-up',[UserController::class, 'store']);
 
 Route::post('/logout',[UserController::class, 'logout']);
+
+Route::get('/dashboard', function(){
+    return view('pages.manage.dashboard');
+});
+
+// Show post list manage view
+Route::get('/posts/manage', [PostController::class, 'manage']);
+
+// Show post create view
+Route::get('/posts/create', [PostController::class, 'create']);
+
+// Show post edit view
+Route::get('/posts/edit', [PostController::class, 'edit']);
+
+// Edit post
+Route::put('/posts/{post}', [PostController::class, 'update']);
+
+// Delete post
+Route::delete('/posts/{post}', [PostController::class, 'destroy']);
+

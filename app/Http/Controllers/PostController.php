@@ -29,4 +29,24 @@ class PostController extends Controller
             'posts' => $posts
         ]);
     }
+
+    public function manage(Request $request){
+        return view('pages.manage.post-manage');
+    }
+
+    public function create(Request $request){
+        return view('pages.manage.post-add');
+    }
+
+    public function edit(Post $post){
+        return view('pages.manage.post-edit');
+    }
+
+    public function update(Post $post){
+
+    }
+
+    public function destroy(Post $post){
+
+    }
 }

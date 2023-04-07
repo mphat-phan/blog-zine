@@ -67,14 +67,16 @@
                             </div>
                             <div class="col">
                                 <div class="d-flex flex-column justify-content-center gap-2 border-top pt-3 px-3">
-                                    <div><span><a href="#" class="text-white text-decoration-none"><i
+                                    <div><span><a href="/dashboard" class="text-white text-decoration-none"><i
+                                        class="fa-solid fa-magnifying-glass">&nbsp;&nbsp;&nbsp;</i>Manage</span></a></div>
+                                    <div><span><a href="/edit-profile" class="text-white text-decoration-none"><i
                                                     class="fa-solid fa-magnifying-glass">&nbsp;&nbsp;&nbsp;</i>Edit
                                                 Profile</span></a></div>
-                                    <div><span><a href="#" class="text-white text-decoration-none"><i
+                                    <div><span><a href="/account-setting" class="text-white text-decoration-none"><i
                                                     class="bi bi-person">&nbsp;&nbsp;&nbsp;</i>Account
                                                 Setting</span></a></div>
                                     <div>
-                                        <span><a href="#" class="text-white text-decoration-none"><i
+                                        <span><a href="/help" class="text-white text-decoration-none"><i
                                             class="bi bi-info-circle">&nbsp;&nbsp;&nbsp;</i>Help</span></a>
 
                                         </div>
