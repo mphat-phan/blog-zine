@@ -61,7 +61,7 @@
             <div class="row row-cols-1 gy-3">
                 <div class="col">
                     <div class="content-post">
-                       {{$post->content}}
+                        {!! $post->content !!}
                     </div>
                 </div>
                 <div class="col">

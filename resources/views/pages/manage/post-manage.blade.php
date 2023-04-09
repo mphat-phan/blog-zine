@@ -8,7 +8,9 @@
                     </h2>
                 </div>
                 <div class="col-auto">
-                    <button class="btn btn-primary">Add a post</button>
+                    <a href="/posts/create">
+                        <button class="btn btn-primary">Add a post</button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -102,21 +104,34 @@
                               </tr>
                             </thead>
                             <tbody>
-                              <tr>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td><div class="badge bg-danger">Technology</div></td>
-                                <td><div class="badge bg-success bg-opacity-25 text-success">Live</div></td>
-                                <td>
-                                    <div class="d-flex gap-2">
-                                        <a href="#" class="btn btn-rounded border">
-                                            <i class="bi bi-trash"></i>
-                                        </a>
-                                        <a href="" class="btn btn-rounded border">
-                                            <i class="bi bi-pencil"></i>
-                                        </a>
-                                    </div>
-                                </td>
+                                @unless(count($posts) == 0)
+                                    @foreach($posts as $post)
+                                        <tr>
+                                            <td>{{$post->title}}</td>
+                                            <td>{{$post->created_at}}</td>
+                                            <td><div class="badge bg-danger">Technology</div></td>
+                                            <td><div class="badge bg-success bg-opacity-25 text-success">Live</div></td>
+                                            <td>
+                                                <div class="d-flex gap-2">
+                                                    <a href="/posts/{{$post->id}}/edit" class="btn btn-rounded border">
+                                                        <i class="bi bi-pencil"></i>
+                                                    </a>
+                                                    <a href="" class="btn btn-rounded border">
+                                                        <i class="bi bi-trash"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                @else
+                                    <tr>
+                                        <td colspan="5">
+
+                                            <h4>Không có bài viết nào</h4>
+                                        </td>
+
+                                    </tr>
+                                @endunless
                             </tbody>
                           </table>
                     </div>

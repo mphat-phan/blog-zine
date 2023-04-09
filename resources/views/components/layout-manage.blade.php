@@ -24,6 +24,21 @@
     <x-footer-manage></x-footer-manage>
     <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('assets/js/myScript.js')}}"></script>
+    <script src="{{asset('assets/js/ckeditor.js')}}"></script>
+    <script>
+        // ClassicEditor
+        //     .create( document.querySelector( '#editor' ), {
+        //         ckfinder: {
+        //             uploadUrl: '/assets/images/'
+        //         }
+        //     } )
+        //     .then( editor => {
+        //         window.editor = editor;
+        //     } )
+        //     .catch( error => {
+        //         console.error( 'There was a problem initializing the editor.', error );
+        //     } );
+    </script>
 </body>
 
 </html>

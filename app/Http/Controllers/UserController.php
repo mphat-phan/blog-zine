@@ -5,14 +5,21 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
     public function signUp(){
+        if(Auth::check()){
+            return redirect('/');
+        }
         return view('pages.sign-up');
     }
 
     public function signIn(){
+        if(Auth::check()){
+            return redirect('/');
+        }
         return view('pages.sign-in');
     }
 

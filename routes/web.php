@@ -4,8 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
-
-
+use App\Http\Middleware\MatchUserPost;
+use App\Http\Middleware\AuthUser;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,22 +30,26 @@ Route::post('/sign-up',[UserController::class, 'store']);
 
 Route::post('/logout',[UserController::class, 'logout']);
 
-Route::get('/dashboard', function(){
-    return view('pages.manage.dashboard');
+Route::middleware([AuthUser::class])->group(function(){
+    Route::get('/dashboard', function(){
+        return view('pages.manage.dashboard');
+    });
+
+    // Show post list manage view
+    Route::get('/posts/manage', [PostController::class, 'manage']);
+
+    // Show post create view
+    Route::get('/posts/create', [PostController::class, 'create']);
+
+    Route::post('/posts', [PostController::class, 'store']);
+
+    // Show post edit view
+    Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->middleware([MatchUserPost::class]);
+
+    // Edit post
+    Route::put('/posts/{post}', [PostController::class, 'update'])->middleware([MatchUserPost::class]);
+
+    // Delete post
+    Route::delete('/posts/{post}', [PostController::class, 'destroy'])->middleware([MatchUserPost::class]);
 });
-
-// Show post list manage view
-Route::get('/posts/manage', [PostController::class, 'manage']);
-
-// Show post create view
-Route::get('/posts/create', [PostController::class, 'create']);
-
-// Show post edit view
-Route::get('/posts/edit', [PostController::class, 'edit']);
-
-// Edit post
-Route::put('/posts/{post}', [PostController::class, 'update']);
-
-// Delete post
-Route::delete('/posts/{post}', [PostController::class, 'destroy']);
 

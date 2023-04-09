@@ -3,7 +3,13 @@
 <div class="col ">
     <div class="card card-blog border-0 bg-transparent">
         <div class="card-img " onclick="window.location='http://google.com';">
-            <img src="{{$post->image}}" class="card-img-top object-fit h-500" alt="Image">
+            @if(File::exists('images/'.$post->image))
+                <img src="{{asset('images/'.$post->image)}}" class="card-img-top object-fit h-500" alt="Image">
+            @elseif(!is_null($post->image))
+                <img src="{{$post->image}}" class="card-img-top object-fit h-500" alt="Image">
+            @else
+                <img src="{{asset('images/No-Image-Placeholder.svg.png')}}" class="card-img-top object-fit h-500" alt="Image">
+            @endif
         </div>
         <div class="card-img-overlay d-flex px-3 flex-column justify-content-end">
             <div><span class="badge bg-danger">Technology</span></div>

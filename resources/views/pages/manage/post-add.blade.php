@@ -5,32 +5,53 @@
         </div>
         <div class="col">
             <div class="border rounded p-3">
-                <form action="/" method="post">
+                <form action="/posts" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="row flex-column g-3">
                         <div class="col">
+                            @foreach ($errors->all() as $error)
+                                <div class="alert alert-danger">
+                                    {{ $error }}
+                                </div>
+                            @endforeach
+                        </div>
+                        <div class="col">
                             <div class="">
                                 <label for="title" class="form-label">Post Name</label>
-                                <input type="text" class="form-control bg-transparent" id="title" placeholder="Post name" name="title">
+                                <input type="text" class="form-control bg-transparent" id="title" placeholder="Post name" name="title" value="{{old('title')}}" aria-describedby="titleHelp" required>
+                                <div id="titleHelp" class="form-text">Minimum of 6 words</div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="">
+                                <label for="metaTitle" class="form-label">Post Meta Title</label>
+                                <input type="text" class="form-control bg-transparent" id="metaTitle" placeholder="Post name" name="metaTitle" value="{{old('metaTitle')}}">
+                                <div id="metaTitleHelp" class="form-text">Minimum of 6 words</div>
                             </div>
                         </div>
                         <div class="col">
                             <div class="">
                                 <label for="summary" class="form-label">Short Summary</label>
-                                <textarea class="form-control bg-transparent" id="summary" name="summary" rows="3"></textarea>
+                                <textarea class="form-control bg-transparent" id="summary" name="summary" rows="3" value="{{old('summary')}}" required></textarea>
+                                <div id="summaryHelp" class="form-text">Minimum of 30 words</div>
                             </div>
                         </div>
-                        {{-- Use quill snow edit --}}
+                        {{-- Use ckeditor edit --}}
                         <div class="col">
                             <div class="">
                                 <label for="content" class="form-label">Content</label>
-                                <textarea class="form-control bg-transparent" id="content" name="content" rows="10"></textarea>
+                                <textarea class="form-control bg-transparent" id="content" name="content" rows="10" value="{{old('content')}}" required></textarea>
+                                <div id="contentHelp" class="form-text">Minimum of 50 words</div>
                             </div>
+                            {{-- <div id="editor">
+                                <p>This is the editor content.</p>
+                            </div> --}}
                         </div>
                         <div class="col">
                             <div class="">
                                 <label for="image" class="form-label">Upload post image here</label>
-                                <input class="form-control" type="file" id="image">
+                                <input class="form-control" type="file" id="image" name="image">
+                                <div id="titleHelp" class="form-text">Must be image file</div>
                             </div>
                         </div>
                         <div class="col">
@@ -59,8 +80,6 @@
                         </div>
                     </div>
                 </form>
-
-
             </div>
         </div>
     </div>

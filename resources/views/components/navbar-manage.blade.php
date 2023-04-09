@@ -69,8 +69,8 @@
                                             alt="Avatar">
                                     </div>
                                     <div class="col">
-                                        <div class="text-white fw-bold">Louis</div>
-                                        <div class="text-white" style="font-size: 14px;">example@gmail.com
+                                        <div class="text-white fw-bold">{{auth()->user()->name}}</div>
+                                        <div class="text-white" style="font-size: 14px;">{{auth()->user()->email}}
                                         </div>
                                     </div>
                                 </div>
